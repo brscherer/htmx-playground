@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTMX - To Do List</title>
+  <script src="https://unpkg.com/htmx.org@1.9.4" integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV" crossorigin="anonymous"></script>
+</head>
+<body>
+ 
+  <form hx-post="http://localhost:3000/add" hx-target="#todos">
+    <input type="text" name="input" placeholder="Type here">
+    <button type="submit">Add</button>
+  </form>
+ 
+  <button hx-post="http://localhost:3000/clear" hx-target="#todos">Clear</button>
+ 
+  <ul id="todos" hx-get="http://localhost:3000/todos"></ul>
+
+</body>
+</html>
